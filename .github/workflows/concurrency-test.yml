@@ -1,0 +1,24 @@
+name: Concurrency Test
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Start
+        run: echo "Workflow started"
+
+      - name: Sleep
+        run: sleep 120
+
+      - name: Finish
+        run: echo "Workflow completed"
