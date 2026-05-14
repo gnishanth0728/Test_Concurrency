@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Start
-        run: echo "Workflow started"
+        run: echo "Workflow started 2"
 
       - name: Sleep
         run: sleep 120
